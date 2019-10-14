@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-08T10:45:37.663Z</updated>
+  <updated>2019-10-14T02:15:16.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://yoursite.com/2019/10/14/Leetcode/"/>
     <id>http://yoursite.com/2019/10/14/Leetcode/</id>
     <published>2019-10-14T02:00:22.926Z</published>
-    <updated>2019-10-08T10:45:37.663Z</updated>
+    <updated>2019-10-14T02:15:16.211Z</updated>
     
-    <content type="html"><![CDATA[<p>1.两数之和</p><p>为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。</p><p>通过以空间换取速度的方式，我们可以将查找时间从 O(n)降低到 O(1)。哈希表正是为此目的而构建的，它支持以 近似 恒定的时间进行快速查找。我用“近似”来描述，是因为一旦出现冲突，查找用时可能会退化到 O(n)。但只要你仔细地挑选哈希函数，在哈希表中进行查找的用时应当被摊销为 O(1)。</p><p>一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]）是否存在于表中。注意，该目标元素不能是 nums[i] 本身！</p><p>复杂度分析：</p><p>时间复杂度：O(n)，<br>我们把包含有 n个元素的列表遍历两次。由于哈希表将查找时间缩短到 O(1) ，所以时间复杂度为 O(n)。</p><p>空间复杂度：O(n)，<br>所需的额外空间取决于哈希表中存储的元素数量，该表中存储了n个元素。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="title-Leetcode"><a href="#title-Leetcode" class="headerlink" title="title: Leetcode"></a>title: Leetcode</h1><p>1.两数之和</p><p>为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。</p><p>通过以空间换取速度的方式，我们可以将查找时间从 O(n)降低到 O(1)。哈希表正是为此目的而构建的，它支持以 近似 恒定的时间进行快速查找。我用“近似”来描述，是因为一旦出现冲突，查找用时可能会退化到 O(n)。但只要你仔细地挑选哈希函数，在哈希表中进行查找的用时应当被摊销为 O(1)。</p><p>一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]）是否存在于表中。注意，该目标元素不能是 nums[i] 本身！</p><p>复杂度分析：</p><p>时间复杂度：O(n)， 我们把包含有 n个元素的列表遍历两次。由于哈希表将查找时间缩短到 O(1) ，所以时间复杂度为 O(n)。</p><p>空间复杂度：O(n)， 所需的额外空间取决于哈希表中存储的元素数量，该表中存储了n个元素。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1.两数之和&lt;/p&gt;
-&lt;p&gt;为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。&lt;/p&gt;
-&lt;p&gt;通过以空间换取速度的方式，我们可以将查找时间从 O(
+        &lt;h1 id=&quot;title-Leetcode&quot;&gt;&lt;a href=&quot;#title-Leetcode&quot; class=&quot;headerlink&quot; title=&quot;title: Leetcode&quot;&gt;&lt;/a&gt;title: Leetcode&lt;/h1&gt;&lt;p&gt;1.两数之和&lt;/p&gt;
+&lt;p&gt;为了对运行时
       
     
     </summary>
