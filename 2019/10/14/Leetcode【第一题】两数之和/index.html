@@ -68,12 +68,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="哈希表,">
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="六姐的博客" type="application/atom+xml">
@@ -83,17 +81,18 @@
 
 
 
-<meta name="description" content="题目 两数之和">
+<meta name="description" content="题目 两数之和 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。">
+<meta name="keywords" content="哈希表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode【NO.1】两数之和">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/Leetcode【NO-1】两数之和/index.html">
+<meta property="og:title" content="Leetcode【第一题】两数之和">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/Leetcode【第一题】两数之和/index.html">
 <meta property="og:site_name" content="六姐的博客">
-<meta property="og:description" content="题目 两数之和">
+<meta property="og:description" content="题目 两数之和 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-14T06:25:53.504Z">
+<meta property="og:updated_time" content="2019-10-16T06:12:32.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode【NO.1】两数之和">
-<meta name="twitter:description" content="题目 两数之和">
+<meta name="twitter:title" content="Leetcode【第一题】两数之和">
+<meta name="twitter:description" content="题目 两数之和 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。">
 
 
 
@@ -123,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/14/Leetcode【NO-1】两数之和/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/14/Leetcode【第一题】两数之和/">
 
 
 
 
 
-  <title>Leetcode【NO.1】两数之和 | 六姐的博客</title>
+  <title>Leetcode【第一题】两数之和 | 六姐的博客</title>
   
 
 
@@ -276,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/Leetcode【NO-1】两数之和/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/Leetcode【第一题】两数之和/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Six Sister">
@@ -293,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode【NO.1】两数之和</h1>
+          <h1 class="post-title" itemprop="name headline">Leetcode【第一题】两数之和</h1>
         
 
         <div class="post-meta">
@@ -315,6 +314,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -379,10 +400,10 @@
       
 
       
-        <h1 id="题目-两数之和"><a href="#题目-两数之和" class="headerlink" title="题目 两数之和"></a>题目 两数之和</h1><a id="more"></a>
-<blockquote>
+        <h1 id="题目-两数之和"><a href="#题目-两数之和" class="headerlink" title="题目 两数之和"></a>题目 两数之和</h1><blockquote>
 <p>给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 </blockquote>
+<a id="more"></a>
 <hr>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
 <hr>
@@ -413,12 +434,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/14/Leetcode【NO-1】两数之和/">Leetcode【NO.1】两数之和</a></p>
+  <p><span>本文标题:</span><a href="/2019/10/14/Leetcode【第一题】两数之和/">Leetcode【第一题】两数之和</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Six Sister 的个人博客">Six Sister</a></p>
   <p><span>发布时间:</span>2019年10月14日 - 14:10</p>
-  <p><span>最后更新:</span>2019年10月14日 - 14:10</p>
-  <p><span>原始链接:</span><a href="/2019/10/14/Leetcode【NO-1】两数之和/" title="Leetcode【NO.1】两数之和">http://yoursite.com/2019/10/14/Leetcode【NO-1】两数之和/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/10/14/Leetcode【NO-1】两数之和/" aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2019年10月16日 - 14:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/14/Leetcode【第一题】两数之和/" title="Leetcode【第一题】两数之和">http://yoursite.com/2019/10/14/Leetcode【第一题】两数之和/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/10/14/Leetcode【第一题】两数之和/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -447,11 +468,33 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/哈希表/" rel="tag"># 哈希表</a>
+          
+        </div>
+      
 
       
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/16/Leetcode【第二题】两数相加/" rel="prev" title="Leetcode【第二题】两数相加">
+                Leetcode【第二题】两数相加 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -525,14 +568,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
