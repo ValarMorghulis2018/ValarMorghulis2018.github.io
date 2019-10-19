@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="回文数,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="题目 Z字形变换 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。比如输入字符串为 “LEETCODEISHIRING”行数为 3 时，排列如下：  123L   C   I   RE T O E S I I GE   D   H   N  之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。">
+<meta name="description" content="题目 回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 进阶:你能不将整数转为字符串来解决这个问题吗？">
+<meta name="keywords" content="回文数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode【第六题】Z字形变换">
-<meta property="og:url" content="http://yoursite.com/2019/10/16/Leetcode【第六题】z字形变换/index.html">
+<meta property="og:title" content="Leetcode【第九题】回文数">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/Leetcode【第九题】回文数/index.html">
 <meta property="og:site_name" content="六姐的博客">
-<meta property="og:description" content="题目 Z字形变换 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。比如输入字符串为 “LEETCODEISHIRING”行数为 3 时，排列如下：  123L   C   I   RE T O E S I I GE   D   H   N  之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。">
+<meta property="og:description" content="题目 回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 进阶:你能不将整数转为字符串来解决这个问题吗？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T09:47:30.710Z">
+<meta property="og:updated_time" content="2019-10-19T09:26:55.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode【第六题】Z字形变换">
-<meta name="twitter:description" content="题目 Z字形变换 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。比如输入字符串为 “LEETCODEISHIRING”行数为 3 时，排列如下：  123L   C   I   RE T O E S I I GE   D   H   N  之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。">
+<meta name="twitter:title" content="Leetcode【第九题】回文数">
+<meta name="twitter:description" content="题目 回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 进阶:你能不将整数转为字符串来解决这个问题吗？">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/16/Leetcode【第六题】z字形变换/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/19/Leetcode【第九题】回文数/">
 
 
 
 
 
-  <title>Leetcode【第六题】Z字形变换 | 六姐的博客</title>
+  <title>Leetcode【第九题】回文数 | 六姐的博客</title>
   
 
 
@@ -274,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/Leetcode【第六题】z字形变换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/Leetcode【第九题】回文数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Six Sister">
@@ -291,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode【第六题】Z字形变换</h1>
+          <h1 class="post-title" itemprop="name headline">Leetcode【第九题】回文数</h1>
         
 
         <div class="post-meta">
@@ -303,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T17:42:07+08:00">
-                2019-10-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T16:23:43+08:00">
+                2019-10-19
               </time>
             
 
@@ -362,7 +363,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  443
+                  285
                 </span>
               
 
@@ -378,7 +379,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -399,36 +400,33 @@
       
 
       
-        <h1 id="题目-Z字形变换"><a href="#题目-Z字形变换" class="headerlink" title="题目 Z字形变换"></a>题目 Z字形变换</h1><blockquote>
-<p>将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。<br>比如输入字符串为 “LEETCODEISHIRING”行数为 3 时，排列如下：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L   C   I   R</span><br><span class="line">E T O E S I I G</span><br><span class="line">E   D   H   N</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。</p>
+        <h1 id="题目-回文数"><a href="#题目-回文数" class="headerlink" title="题目 回文数"></a>题目 回文数</h1><blockquote>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>进阶:你能不将整数转为字符串来解决这个问题吗？</p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 3</span><br><span class="line">输出: &quot;LCIRETOESIIGEDHN&quot;</span><br><span class="line">L   C   I   R</span><br><span class="line">E T O E S I I G</span><br><span class="line">E   D   H   N</span><br></pre></td></tr></table></figure>
-<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 4</span><br><span class="line">输出: &quot;LDREOEIIECIHNTSG&quot;</span><br><span class="line">解释:</span><br><span class="line"></span><br><span class="line">L     D     R</span><br><span class="line">E   O E   I I</span><br><span class="line">E C   I H   N</span><br><span class="line">T     S     G</span><br></pre></td></tr></table></figure>
+<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 121</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: -121</span><br><span class="line">输出: false</span><br><span class="line">解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
+<h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: false</span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote>
-<p>找到Z字的转折点规律是关键</p>
-<p>标记示例字符串各字符所在行数 ==’LDREOEIIECIHNTSG’==</p>
-<p>L E E T C O D E I S H I R I N G</p>
-<p>1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2</p>
-<p>L E E T C O D E I S H I R I N G</p>
-<p>1 2 3 4 3 2 1 2 3 4 3 2 1 2 3 4</p>
-<p>易得规律：转折点在[1,numRows]两端反复</p>
-<p>定义一个计数器，记录当前行数与给定行数间的关系，当行数为1或等于给定行数时，取相反数</p>
+<p>字符串解法：非负整数，反转，判断是否相等</p>
+<p>非字符串解法：计算位数和余数，寻找对应关系</p>
 <blockquote>
 <p>复杂度分析：</p>
-<p>时间复杂度：O(n)，遍历一遍字符串</p>
-<p>空间复杂度：O(n)，需要对应的列表存储，总长为字符串长度</p>
+<p>时间复杂度：O(max(n,n/2))</p>
+<p>空间复杂度：O(n)</p>
 </blockquote>
+</blockquote>
+<p><code>pytho 除法运算符</code></p>
+<blockquote>
+<p>// 向下整除</p>
+<p>% 取余</p>
 </blockquote>
 <hr>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def convert(self, s, numRows):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :type numRows: int</span><br><span class="line">        :rtype: str</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        # 行数小于2，直接返回</span><br><span class="line">        if numRows &lt; 2:</span><br><span class="line">            return s</span><br><span class="line">        </span><br><span class="line">        # 以字符串构建行列表</span><br><span class="line">        res = [&apos;&apos; for i in range(numRows)]</span><br><span class="line"></span><br><span class="line">        spot = - 1 # 转折点</span><br><span class="line">        n = 1 # 计数器</span><br><span class="line">        for str_ in s:</span><br><span class="line">            res[n - 1] = res[n - 1] + str_</span><br><span class="line">            if n == 1 or n == numRows:</span><br><span class="line">                spot = - spot</span><br><span class="line">            n = n + spot</span><br><span class="line"></span><br><span class="line">        return &apos;&apos;.join(res)</span><br></pre></td></tr></table></figure>
-
+<h4 id="代码1-字符串解法"><a href="#代码1-字符串解法" class="headerlink" title="代码1 字符串解法"></a>代码1 字符串解法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isPalindrome(self, x: int) -&gt; bool:        </span><br><span class="line">        if str(x) == str(x)[::-1]:</span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br></pre></td></tr></table></figure>
+<h4 id="代码2-除法解法"><a href="#代码2-除法解法" class="headerlink" title="代码2 除法解法"></a>代码2 除法解法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isPalindrome(self, x: int) -&gt; bool:        </span><br><span class="line">        if (x &lt; 0) or (x != 0 and x % 10 == 0):</span><br><span class="line">            return False</span><br><span class="line">        cmp_num = 0</span><br><span class="line">        while x &gt; cmp_num:</span><br><span class="line">            cmp_num = cmp_num * 10 + x % 10</span><br><span class="line">            x //= 10</span><br><span class="line">        return x == cmp_num or x == cmp_num // 10</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -444,12 +442,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/16/Leetcode【第六题】z字形变换/">Leetcode【第六题】Z字形变换</a></p>
+  <p><span>本文标题:</span><a href="/2019/10/19/Leetcode【第九题】回文数/">Leetcode【第九题】回文数</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Six Sister 的个人博客">Six Sister</a></p>
-  <p><span>发布时间:</span>2019年10月16日 - 17:10</p>
-  <p><span>最后更新:</span>2019年10月16日 - 17:10</p>
-  <p><span>原始链接:</span><a href="/2019/10/16/Leetcode【第六题】z字形变换/" title="Leetcode【第六题】Z字形变换">http://yoursite.com/2019/10/16/Leetcode【第六题】z字形变换/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/10/16/Leetcode【第六题】z字形变换/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年10月19日 - 16:10</p>
+  <p><span>最后更新:</span>2019年10月19日 - 17:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/19/Leetcode【第九题】回文数/" title="Leetcode【第九题】回文数">http://yoursite.com/2019/10/19/Leetcode【第九题】回文数/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/10/19/Leetcode【第九题】回文数/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -478,6 +476,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/回文数/" rel="tag"># 回文数</a>
+          
+        </div>
+      
 
       
       
@@ -487,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/16/Leetcode【第五题】最长回文子串/" rel="next" title="Leetcode【第五题】最长回文子串">
-                <i class="fa fa-chevron-left"></i> Leetcode【第五题】最长回文子串
+              <a href="/2019/10/19/leetcode【第八题】字符串转换整数（atoi）/" rel="next" title="Leetcode【第八题】字符串转换整数（atoi）">
+                <i class="fa fa-chevron-left"></i> Leetcode【第八题】字符串转换整数（atoi）
               </a>
             
           </div>
@@ -496,10 +500,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/16/Leetcode【第七题】整数反转/" rel="prev" title="Leetcode【第七题】整数反转">
-                Leetcode【第七题】整数反转 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目-Z字形变换"><span class="nav-number">1.</span> <span class="nav-text">题目 Z字形变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例1"><span class="nav-number">1.1.</span> <span class="nav-text">示例1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例2"><span class="nav-number">1.2.</span> <span class="nav-text">示例2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.2.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目-回文数"><span class="nav-number">1.</span> <span class="nav-text">题目 回文数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例1"><span class="nav-number">1.1.</span> <span class="nav-text">示例1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例2"><span class="nav-number">1.2.</span> <span class="nav-text">示例2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例3"><span class="nav-number">1.3.</span> <span class="nav-text">示例3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.3.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码1-字符串解法"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">代码1 字符串解法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码2-除法解法"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">代码2 除法解法</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

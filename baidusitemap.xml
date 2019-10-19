@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2019/10/19/Leetcode%E3%80%90%E7%AC%AC%E4%B9%9D%E9%A2%98%E3%80%91%E5%9B%9E%E6%96%87%E6%95%B0/</loc>
+    <lastmod>2019-10-19T09:26:55.702Z</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2019/10/19/leetcode%E3%80%90%E7%AC%AC%E5%85%AB%E9%A2%98%E3%80%91%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0%EF%BC%88atoi%EF%BC%89/</loc>
+    <lastmod>2019-10-19T08:09:38.005Z</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2019/10/16/Leetcode%E3%80%90%E7%AC%AC%E4%B8%83%E9%A2%98%E3%80%91%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</loc>
     <lastmod>2019-10-16T09:47:51.647Z</lastmod>
   </url>  <url>
