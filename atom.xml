@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-19T09:26:55.702Z</updated>
+  <updated>2019-10-24T10:43:42.248Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,117 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode【第十三题】罗马数字转整数</title>
+    <link href="http://yoursite.com/2019/10/24/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%B8%89%E9%A2%98%E3%80%91%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/10/24/Leetcode【第十三题】罗马数字转整数/</id>
+    <published>2019-10-24T09:58:15.000Z</published>
+    <updated>2019-10-24T10:43:42.248Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-整数转罗马数字"><a href="#题目-整数转罗马数字" class="headerlink" title="题目 整数转罗马数字"></a>题目 整数转罗马数字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure><blockquote><p>例如， 罗马数字 2 写做II，即为两个并列的 1。12 写做XII，即为X+II。 27 写做XXVII, 即为XX+V+II。</p><p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做IIII，而是IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为IX。这个特殊的规则只适用于以下六种情况：</p><p>I可以放在V(5) 和X(10) 的左边，来表示 4 和 9。<br>X可以放在L(50) 和C(100) 的左边，来表示 40 和90。<br>C可以放在D(500) 和M(1000) 的左边，来表示400 和900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;III&quot;</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IV&quot;</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure><h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IX&quot;</span><br><span class="line">输出: 9</span><br></pre></td></tr></table></figure><h2 id="示例4"><a href="#示例4" class="headerlink" title="示例4"></a>示例4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;LVIII&quot;</span><br><span class="line">输出: 58</span><br><span class="line">解释: L = 50, V= 5, III = 3.</span><br></pre></td></tr></table></figure><h2 id="示例5"><a href="#示例5" class="headerlink" title="示例5"></a>示例5</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;MCMXCIV&quot;</span><br><span class="line">输出: 1994</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>此题可用哈希表列表储存几个特殊数值</p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n)</p><p>空间复杂度：O(n)</p></blockquote></blockquote><hr><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def romanToInt(self,s):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        dic = &#123;&quot;I&quot;: 1, &quot;V&quot;: 5, &quot;X&quot;: 10, &quot;L&quot;: 50, &quot;C&quot;: 100, &quot;D&quot;: 500, &quot;M&quot;: 1000&#125;</span><br><span class="line">        num = 0</span><br><span class="line">        for n, c in enumerate(s[:-1]):</span><br><span class="line">            if dic[c] &gt;= dic[s[n + 1]]:</span><br><span class="line">                num = num + dic[c]</span><br><span class="line">            else:</span><br><span class="line">                num = num - dic[c]</span><br><span class="line">        num = num + dic[s[-1]]</span><br><span class="line">        return num</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-整数转罗马数字&quot;&gt;&lt;a href=&quot;#题目-整数转罗马数字&quot; class=&quot;headerlink&quot; title=&quot;题目 整数转罗马数字&quot;&gt;&lt;/a&gt;题目 整数转罗马数字&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;字符          数值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;I             1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;V             5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X             10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;L             50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;C             100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;D             500&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;M             1000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例如， 罗马数字 2 写做II，即为两个并列的 1。12 写做XII，即为X+II。 27 写做XXVII, 即为XX+V+II。&lt;/p&gt;
+&lt;p&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做IIII，而是IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为IX。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
+&lt;p&gt;I可以放在V(5) 和X(10) 的左边，来表示 4 和 9。&lt;br&gt;X可以放在L(50) 和C(100) 的左边，来表示 40 和90。&lt;br&gt;C可以放在D(500) 和M(1000) 的左边，来表示400 和900。&lt;br&gt;给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="哈希表" scheme="http://yoursite.com/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode【第十二题】整数转罗马数字</title>
+    <link href="http://yoursite.com/2019/10/23/leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E3%80%91%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"/>
+    <id>http://yoursite.com/2019/10/23/leetcode【第十二题】整数转罗马数字/</id>
+    <published>2019-10-23T11:25:01.000Z</published>
+    <updated>2019-10-24T10:43:50.201Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-整数转罗马数字"><a href="#题目-整数转罗马数字" class="headerlink" title="题目 整数转罗马数字"></a>题目 整数转罗马数字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure><blockquote><p>例如， 罗马数字 2 写做II，即为两个并列的 1。12 写做XII，即为X+II。 27 写做XXVII, 即为XX+V+II。</p><p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做IIII，而是IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为IX。这个特殊的规则只适用于以下六种情况：</p><p>I可以放在V(5) 和X(10) 的左边，来表示 4 和 9。<br>X可以放在L(50) 和C(100) 的左边，来表示 40 和90。<br>C可以放在D(500) 和M(1000) 的左边，来表示400 和900。<br>给定一个整数，将其转为罗马数字。输入确保在 1到 3999 的范围内。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 3</span><br><span class="line">输出: &quot;III&quot;</span><br></pre></td></tr></table></figure><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: &quot;IV&quot;</span><br></pre></td></tr></table></figure><h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 9</span><br><span class="line">输出: &quot;IX&quot;</span><br></pre></td></tr></table></figure><h2 id="示例4"><a href="#示例4" class="headerlink" title="示例4"></a>示例4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 58</span><br><span class="line">输出: &quot;LVIII&quot;</span><br><span class="line">解释: L = 50, V = 5, III = 3.</span><br></pre></td></tr></table></figure><h2 id="示例5"><a href="#示例5" class="headerlink" title="示例5"></a>示例5</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 1994</span><br><span class="line">输出: &quot;MCMXCIV&quot;</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>此题可用列表储存几个特殊数值，再用贪心算法求解</p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n)</p><p>空间复杂度：O(n)</p></blockquote></blockquote><hr><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def intToRoman(self, num):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type num: int</span><br><span class="line">        :rtype: str</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]</span><br><span class="line">        romans = [&quot;M&quot;, &quot;CM&quot;, &quot;D&quot;, &quot;CD&quot;, &quot;C&quot;, &quot;XC&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;]</span><br><span class="line"></span><br><span class="line">        index = 0</span><br><span class="line">        res = &apos;&apos;</span><br><span class="line">        while index &lt; 13:</span><br><span class="line">            while num &gt;= nums[index]:</span><br><span class="line">                res = res + romans[index]</span><br><span class="line">                num = num - nums[index]</span><br><span class="line">            index += 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-整数转罗马数字&quot;&gt;&lt;a href=&quot;#题目-整数转罗马数字&quot; class=&quot;headerlink&quot; title=&quot;题目 整数转罗马数字&quot;&gt;&lt;/a&gt;题目 整数转罗马数字&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;字符          数值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;I             1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;V             5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X             10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;L             50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;C             100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;D             500&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;M             1000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例如， 罗马数字 2 写做II，即为两个并列的 1。12 写做XII，即为X+II。 27 写做XXVII, 即为XX+V+II。&lt;/p&gt;
+&lt;p&gt;通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做IIII，而是IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为IX。这个特殊的规则只适用于以下六种情况：&lt;/p&gt;
+&lt;p&gt;I可以放在V(5) 和X(10) 的左边，来表示 4 和 9。&lt;br&gt;X可以放在L(50) 和C(100) 的左边，来表示 40 和90。&lt;br&gt;C可以放在D(500) 和M(1000) 的左边，来表示400 和900。&lt;br&gt;给定一个整数，将其转为罗马数字。输入确保在 1到 3999 的范围内。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="贪心算法" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode【第十一题】盛最多水的容器</title>
+    <link href="http://yoursite.com/2019/10/23/leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%B8%80%E9%A2%98%E3%80%91%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    <id>http://yoursite.com/2019/10/23/leetcode【第十一题】盛最多水的容器/</id>
+    <published>2019-10-23T10:25:01.000Z</published>
+    <updated>2019-10-24T10:43:54.265Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-盛最多水的容器"><a href="#题目-盛最多水的容器" class="headerlink" title="题目 盛最多水的容器"></a>题目 盛最多水的容器</h1><blockquote><p>给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画 n 条垂直线，垂直线 i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。</p><p>说明：你不能倾斜容器，且n的值至少为 2。</p><p>图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,8,6,2,5,4,8,3,7]</span><br><span class="line">输出: 49</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>由题易得：由线段形成的区域总是受到较短的那个线段以及两者间的距离决定。</p><p>移动指向较短线段的指针尽管造成了矩形宽度的减小，但却可能会有助于面积的增大。</p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n)，遍历一遍整数字符串</p><p>空间复杂度：O(1)，存储容量为定值</p></blockquote></blockquote><hr><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def maxArea(self, height):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type height: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">        i, j, res = 0, len(height) - 1, 0</span><br><span class="line">        while i &lt; j:</span><br><span class="line">            min_height = min(height[i], height[j])</span><br><span class="line">            res = max(res, min_height * (j - i))</span><br><span class="line">            if height[i] &lt; height[j]:</span><br><span class="line">                i += 1</span><br><span class="line">            else:</span><br><span class="line">                j -= 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-盛最多水的容器&quot;&gt;&lt;a href=&quot;#题目-盛最多水的容器&quot; class=&quot;headerlink&quot; title=&quot;题目 盛最多水的容器&quot;&gt;&lt;/a&gt;题目 盛最多水的容器&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点(i,ai) 。在坐标内画 n 条垂直线，垂直线 i的两个端点分别为(i,ai) 和 (i, 0)。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。&lt;/p&gt;
+&lt;p&gt;说明：你不能倾斜容器，且n的值至少为 2。&lt;/p&gt;
+&lt;p&gt;图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="双指针法" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode【第十题】正则表达式匹配</title>
+    <link href="http://yoursite.com/2019/10/19/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E9%A2%98%E3%80%91%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
+    <id>http://yoursite.com/2019/10/19/Leetcode【第十题】正则表达式匹配/</id>
+    <published>2019-10-19T10:23:43.000Z</published>
+    <updated>2019-10-23T10:24:43.073Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-正则表达式匹配"><a href="#题目-正则表达式匹配" class="headerlink" title="题目 正则表达式匹配"></a>题目 正则表达式匹配</h1><blockquote><p>给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 ‘.’ 和 ‘<em>‘ 的正则表达式匹配<br>‘.’ 匹配任意单个字符<br>‘</em>‘ 匹配零个或多个前面的那一个元素</p><p>所谓匹配，是要涵盖 整个字符串s的，而不是部分字符串。</p><p>说明:</p><pre><code>s 可能为空，且只包含从 a-z 的小写字母。p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。</code></pre></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">s = &quot;aa&quot;</span><br><span class="line">p = &quot;a&quot;</span><br><span class="line">输出: false</span><br><span class="line">解释: &quot;a&quot; 无法匹配 &quot;aa&quot; 整个字符串。</span><br></pre></td></tr></table></figure><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">s = &quot;aa&quot;</span><br><span class="line">p = &quot;a*&quot;</span><br><span class="line">输出: true</span><br><span class="line">解释: 因为 &apos;*&apos; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &apos;a&apos;。因此，字符串 &quot;aa&quot; 可被视为 &apos;a&apos; 重复了一次。</span><br></pre></td></tr></table></figure><h2 id="示例3"><a href="#示例3" class="headerlink" title="示例3"></a>示例3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">s = &quot;ab&quot;</span><br><span class="line">p = &quot;.*&quot;</span><br><span class="line">输出: true</span><br><span class="line">解释: &quot;.*&quot; 表示可匹配零个或多个（&apos;*&apos;）任意字符（&apos;.&apos;）。</span><br></pre></td></tr></table></figure><h2 id="示例4"><a href="#示例4" class="headerlink" title="示例4"></a>示例4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">s = &quot;aab&quot;</span><br><span class="line">p = &quot;c*a*b&quot;</span><br><span class="line">输出: true</span><br><span class="line">解释: 因为 &apos;*&apos; 表示零个或多个，这里 &apos;c&apos; 为 0 个, &apos;a&apos; 被重复一次。因此可以匹配字符串 &quot;aab&quot;。</span><br></pre></td></tr></table></figure><h2 id="示例5"><a href="#示例5" class="headerlink" title="示例5"></a>示例5</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">s = &quot;mississippi&quot;</span><br><span class="line">p = &quot;mis*is*p*.&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>动态规划</p></blockquote><p><code>动态规划四要素</code></p><blockquote><p>状态</p><p>转移方程</p><p>初始化</p><p>结果</p></blockquote><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-正则表达式匹配&quot;&gt;&lt;a href=&quot;#题目-正则表达式匹配&quot; class=&quot;headerlink&quot; title=&quot;题目 正则表达式匹配&quot;&gt;&lt;/a&gt;题目 正则表达式匹配&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 ‘.’ 和 ‘&lt;em&gt;‘ 的正则表达式匹配&lt;br&gt;‘.’ 匹配任意单个字符&lt;br&gt;‘&lt;/em&gt;‘ 匹配零个或多个前面的那一个元素&lt;/p&gt;
+&lt;p&gt;所谓匹配，是要涵盖 整个字符串s的，而不是部分字符串。&lt;/p&gt;
+&lt;p&gt;说明:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;s 可能为空，且只包含从 a-z 的小写字母。
+
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="正则表达式" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode【第九题】回文数</title>
