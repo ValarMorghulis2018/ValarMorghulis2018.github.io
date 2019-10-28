@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-24T10:43:42.248Z</updated>
+  <updated>2019-10-28T11:09:55.891Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode【第十六题】最接近的三数之和</title>
+    <link href="http://yoursite.com/2019/10/28/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E5%85%AD%E9%A2%98%E3%80%91%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://yoursite.com/2019/10/28/Leetcode【第十六题】最接近的三数之和/</id>
+    <published>2019-10-28T10:43:10.000Z</published>
+    <updated>2019-10-28T11:09:55.891Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-最接近的三数之和"><a href="#题目-最接近的三数之和" class="headerlink" title="题目 最接近的三数之和"></a>题目 最接近的三数之和</h1><blockquote><p>给定一个包括n 个整数的数组nums和一个目标值target。找出nums中的三个整数，使得它们的和与target最接近。返回这三个数的和。</p><p>假定每组输入只存在唯一答案。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.</span><br><span class="line"></span><br><span class="line">与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>利用python函数特性 set 和 zip </p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n)</p><p>空间复杂度：O(n)</p></blockquote></blockquote><hr><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码 1"></a>代码 1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def threeSumClosest(self, nums, target):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        size = len(nums)</span><br><span class="line">        diff = float(&apos;inf&apos;)</span><br><span class="line">        nums.sort()</span><br><span class="line">        for i in range(size - 2):</span><br><span class="line"></span><br><span class="line">            if i &gt; 0 and nums[i] == nums[i - 1]:</span><br><span class="line">                continue</span><br><span class="line"></span><br><span class="line">            left = i + 1</span><br><span class="line">            right = size - 1</span><br><span class="line">            while left &lt; right:</span><br><span class="line">                s = nums[i] + nums[left] + nums[right]</span><br><span class="line"></span><br><span class="line">                if abs(s - target) &lt; diff:</span><br><span class="line">                    diff = abs(s - target)</span><br><span class="line">                    res = s</span><br><span class="line"></span><br><span class="line">                if s &gt; target:</span><br><span class="line">                    right -= 1</span><br><span class="line">                elif s &lt; target:</span><br><span class="line">                    left += 1</span><br><span class="line">                else:</span><br><span class="line">                    return target</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-最接近的三数之和&quot;&gt;&lt;a href=&quot;#题目-最接近的三数之和&quot; class=&quot;headerlink&quot; title=&quot;题目 最接近的三数之和&quot;&gt;&lt;/a&gt;题目 最接近的三数之和&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个包括n 个整数的数组nums和一个目标值target。找出nums中的三个整数，使得它们的和与target最接近。返回这三个数的和。&lt;/p&gt;
+&lt;p&gt;假定每组输入只存在唯一答案。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="哈希表" scheme="http://yoursite.com/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode【第十五题】三数之和</title>
+    <link href="http://yoursite.com/2019/10/28/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%BA%94%E9%A2%98%E3%80%91%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://yoursite.com/2019/10/28/Leetcode【第十五题】三数之和/</id>
+    <published>2019-10-28T08:37:12.000Z</published>
+    <updated>2019-10-28T11:07:32.428Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-三数之和"><a href="#题目-三数之和" class="headerlink" title="题目 三数之和"></a>题目 三数之和</h1><blockquote><p>给定一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？</p><p>找出所有满足条件且不重复的三元组。</p><p>注意：答案中不可以包含重复的三元组。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</span><br><span class="line"></span><br><span class="line">满足要求的三元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>利用双指针，注意边界和重复</p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n2)</p><p>空间复杂度：O(n)</p></blockquote></blockquote><hr><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码 1"></a>代码 1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def threeSum(self, nums):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        nums.sort()</span><br><span class="line">        res = []</span><br><span class="line">        for i in range(len(nums)):</span><br><span class="line">            if i &gt; 0 and nums[i] == nums[i - 1]:</span><br><span class="line">                continue</span><br><span class="line">            left = i + 1</span><br><span class="line">            right = len(nums) - 1</span><br><span class="line">            while left &lt; right:</span><br><span class="line">                cur_sum = nums[i] + nums[left] + nums[right]</span><br><span class="line">                if cur_sum == 0:</span><br><span class="line">                    tmp = [nums[i], nums[left], nums[right]]</span><br><span class="line">                    res.append(tmp)</span><br><span class="line">                    while left &lt; right and nums[left] == nums[left + 1]:</span><br><span class="line">                        left = left + 1</span><br><span class="line">                    while left &lt; right and nums[right] == nums[right - 1]:</span><br><span class="line">                        right = right - 1</span><br><span class="line">                    left = left + 1</span><br><span class="line">                    right = right - 1</span><br><span class="line">                elif cur_sum &gt; 0:</span><br><span class="line">                    right = right - 1</span><br><span class="line">                else:</span><br><span class="line">                    left = left + 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-三数之和&quot;&gt;&lt;a href=&quot;#题目-三数之和&quot; class=&quot;headerlink&quot; title=&quot;题目 三数之和&quot;&gt;&lt;/a&gt;题目 三数之和&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？&lt;/p&gt;
+&lt;p&gt;找出所有满足条件且不重复的三元组。&lt;/p&gt;
+&lt;p&gt;注意：答案中不可以包含重复的三元组。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+      <category term="双指针" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode【第十四题】最长公共前缀</title>
+    <link href="http://yoursite.com/2019/10/24/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E5%9B%9B%E9%A2%98%E3%80%91%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/"/>
+    <id>http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/</id>
+    <published>2019-10-24T10:47:13.000Z</published>
+    <updated>2019-10-28T08:35:23.182Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目-最长公共前缀"><a href="#题目-最长公共前缀" class="headerlink" title="题目 最长公共前缀"></a>题目 最长公共前缀</h1><blockquote><p>编写一个函数来查找字符串数组中的最长公共前缀。</p><p>如果不存在公共前缀，返回空字符串 “”。</p></blockquote><a id="more"></a><hr><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">输出: &quot;fl&quot;</span><br></pre></td></tr></table></figure><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: 输入不存在公共前缀。</span><br></pre></td></tr></table></figure><blockquote><p>说明：所有输入只包含小写字母a-z</p></blockquote><hr><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p>利用python函数特性 set 和 zip </p><blockquote><p>复杂度分析：</p><p>时间复杂度：O(n)</p><p>空间复杂度：O(n)</p></blockquote></blockquote><hr><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码 1"></a>代码 1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestCommonPrefix(self, strs):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type strs: List[str]</span><br><span class="line">        :rtype: str</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        res = &quot;&quot;</span><br><span class="line">        for tmp in zip(*strs):</span><br><span class="line">            tmp_set = set(tmp)</span><br><span class="line">            if len(tmp_set) == 1:</span><br><span class="line">                res += tmp[0]</span><br><span class="line">            else:</span><br><span class="line">                break</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;题目-最长公共前缀&quot;&gt;&lt;a href=&quot;#题目-最长公共前缀&quot; class=&quot;headerlink&quot; title=&quot;题目 最长公共前缀&quot;&gt;&lt;/a&gt;题目 最长公共前缀&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;编写一个函数来查找字符串数组中的最长公共前缀。&lt;/p&gt;
+&lt;p&gt;如果不存在公共前缀，返回空字符串 “”。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Leetcode【第十三题】罗马数字转整数</title>
@@ -45,8 +119,8 @@
   
   <entry>
     <title>Leetcode【第十二题】整数转罗马数字</title>
-    <link href="http://yoursite.com/2019/10/23/leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E3%80%91%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"/>
-    <id>http://yoursite.com/2019/10/23/leetcode【第十二题】整数转罗马数字/</id>
+    <link href="http://yoursite.com/2019/10/23/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%BA%8C%E9%A2%98%E3%80%91%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"/>
+    <id>http://yoursite.com/2019/10/23/Leetcode【第十二题】整数转罗马数字/</id>
     <published>2019-10-23T11:25:01.000Z</published>
     <updated>2019-10-24T10:43:50.201Z</updated>
     
@@ -72,8 +146,8 @@
   
   <entry>
     <title>Leetcode【第十一题】盛最多水的容器</title>
-    <link href="http://yoursite.com/2019/10/23/leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%B8%80%E9%A2%98%E3%80%91%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
-    <id>http://yoursite.com/2019/10/23/leetcode【第十一题】盛最多水的容器/</id>
+    <link href="http://yoursite.com/2019/10/23/Leetcode%E3%80%90%E7%AC%AC%E5%8D%81%E4%B8%80%E9%A2%98%E3%80%91%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    <id>http://yoursite.com/2019/10/23/Leetcode【第十一题】盛最多水的容器/</id>
     <published>2019-10-23T10:25:01.000Z</published>
     <updated>2019-10-24T10:43:54.265Z</updated>
     
@@ -154,8 +228,8 @@ p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
   
   <entry>
     <title>Leetcode【第八题】字符串转换整数（atoi）</title>
-    <link href="http://yoursite.com/2019/10/19/leetcode%E3%80%90%E7%AC%AC%E5%85%AB%E9%A2%98%E3%80%91%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0%EF%BC%88atoi%EF%BC%89/"/>
-    <id>http://yoursite.com/2019/10/19/leetcode【第八题】字符串转换整数（atoi）/</id>
+    <link href="http://yoursite.com/2019/10/19/Leetcode%E3%80%90%E7%AC%AC%E5%85%AB%E9%A2%98%E3%80%91%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0%EF%BC%88atoi%EF%BC%89/"/>
+    <id>http://yoursite.com/2019/10/19/Leetcode【第八题】字符串转换整数（atoi）/</id>
     <published>2019-10-19T08:09:07.000Z</published>
     <updated>2019-10-19T08:09:38.005Z</updated>
     
