@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-28T11:09:55.891Z</updated>
+  <updated>2019-11-14T09:21:10.705Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/11/15/%E7%BB%9F%E8%AE%A1%E9%98%B3%E6%80%A7%E7%8E%87/"/>
+    <id>http://yoursite.com/2019/11/15/统计阳性率/</id>
+    <published>2019-11-15T04:54:49.929Z</published>
+    <updated>2019-11-14T09:21:10.705Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import dash_core_components as dcc</span><br><span class="line"></span><br><span class="line"># 下拉列表框 Dropdown</span><br><span class="line">dcc.Dropdown(</span><br><span class="line">    options=[</span><br><span class="line">        &#123;&apos;label&apos;: &apos;New York City&apos;, &apos;value&apos;: &apos;NYC&apos;&#125;,</span><br><span class="line">        &#123;&apos;label&apos;: &apos;Montreal&apos;, &apos;value&apos;: &apos;MTL&apos;&#125;,</span><br><span class="line">        &#123;&apos;label&apos;: &apos;San Francisco&apos;, &apos;value&apos;: &apos;SF&apos;&#125;</span><br><span class="line">    ],</span><br><span class="line">    # 未选择任何值时显示的默认文本</span><br><span class="line">    placeholder=&quot;Select a city&quot;, </span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Leetcode【第十六题】最接近的三数之和</title>
