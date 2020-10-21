@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-14T09:21:10.705Z</updated>
+  <updated>2020-10-21T09:01:26.435Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐系统之召回</title>
+    <link href="http://yoursite.com/2020/10/21/2020-10-21%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B9%8B%E5%8F%AC%E5%9B%9E/"/>
+    <id>http://yoursite.com/2020/10/21/2020-10-21 推荐系统之召回/</id>
+    <published>2020-10-21T08:57:10.000Z</published>
+    <updated>2020-10-21T09:01:26.435Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="召回"><a href="#召回" class="headerlink" title="召回"></a>召回</h1><p>在推荐系统架构中召回层与排序层是推荐系统的核心算法层，而将推荐过程分成召回层与排序层主要是基于工程上的考虑，其中召回阶段负责将海量的候选集快速缩小为几万到几千的规模；而排序层则负责对缩小后的候选集进行精准排 序。所以在召回阶段往往会利用少量的特征和简单的模型对大规模的数据集进行快速的筛选，而在排序层一般会使用更多的特征和更加复杂的模型进行精准的排序。</p><hr><a id="more"></a><h3 id="召回层与排序层的特点"><a href="#召回层与排序层的特点" class="headerlink" title="召回层与排序层的特点"></a>召回层与排序层的特点</h3><ol><li>召回层：待计算的候选集合大、计算速度快、模型简单、特征较少，尽量让用户感兴趣的物品在这个阶段能够被快速召回，即保证相关物品的召回率</li><li>排序层：首要目标是得到精准的排序结果。需要处理的物品数量少，可以利用较多的特征，使用比较复杂的模型。</li></ol><p>在设计召回层时，需要权衡计算速度与召回率，工业上主流的召回方法是采用多个简单策略叠加的多路召回策略。</p><hr><h3 id="多路召回策略"><a href="#多路召回策略" class="headerlink" title="多路召回策略"></a>多路召回策略</h3><p>所谓的“多路召回”策略，就是指采用不同的策略、特征或简单模型，分别召回一部分候选集，然后把候选集混合在一起供<br>后续排序模型使用，可以明显的看出，“多路召回策略”是在“计算速度”和“召回率”之间进行权衡的结果。其中，各种简单<br>策略保证候选集的快速召回，从不同角度设计的策略保证召回率接近理想的状态，不至于影响排序效果。</p><p>如下图是多路召回的一个示意图，在多路召回中，每个策略之间毫不相关，所以一般可以写并发多线程同时进行，这样可以更加高效。</p><p>上图只是一个多路召回的例子，也就是说可以使用多种不同的策略来获取用户排序的候选商品集合，而具体使用哪些召回策略其实是与业务强相关的，针对不同的任务就会有对于该业务真实场景下需要考虑的召回规则。例如视频推荐，召回规则可以是“热门视频”、“导演召回”、“演员召回”、“最近上映“、”流行趋势“、”类型召回“等等。</p><h3 id="多路召回存在的问题"><a href="#多路召回存在的问题" class="headerlink" title="多路召回存在的问题"></a>多路召回存在的问题</h3><p>虽然多路召回权衡了计算速度和召回率的问题，可以使得用于排序的候选商品更加的丰富，但是实际的多路召回仍然存在一些问题。如上图所示，对于每一路召回都会从商品集合中拉回K个商品，这里的K是一个超参数，对于K的选择一般需要通过离线评估加线上的A/B测试来确定合理的K值。除此之外，对于不同的任务具体策略的选择也是人工基于经验的选择，选择的策略之间的信息是割裂的，无法总和考虑不同策略对一个物品的影响。</p><hr><h3 id="Embedding-召回"><a href="#Embedding-召回" class="headerlink" title="Embedding 召回"></a>Embedding 召回</h3><h5 id="Embedding是什么？"><a href="#Embedding是什么？" class="headerlink" title="Embedding是什么？"></a>Embedding是什么？</h5><p>Embedding其实是一种思想，主要目的是将稀疏的向量(如one-hot编码)表示转换成稠密的向量，下图直观的显示了one-hot编码和Embedding表示的区别于联系，即Embedding相当于是对one-hot做了平滑，而onehot相当于是对Embedding做了maxpooling。</p><p>目前主流的Embedding技术主要可以分为三大类</p><ol><li>text embedding</li><li>image embedding</li><li>graph embedding</li></ol><h5 id="常见的text-Embedding技术"><a href="#常见的text-Embedding技术" class="headerlink" title="常见的text Embedding技术"></a>常见的text Embedding技术</h5><ol><li>静态向量 Word2vec fasttext glove</li><li>动态向量 ELMO GPT BERT</li></ol><hr><h1 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h1><ol><li>为什么使用AUC<br>例如0.7的AUC，其含义可以大概理解为：给定一个正样本和一个负样本，在70%的情况下，模型对正样本的打分高于对负样本的打分。可以看出这个解释下，我们关心的只有正负样本之间的分数高低，而具体的分支则无关紧要【多高的AUC才算高】<br>参考文章 <a href="https://zhuanlan.zhihu.com/p/24217322" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24217322</a></li><li>如何使用Embedding做召回？<br>参考文章<a href="https://zhuanlan.zhihu.com/p/143763320" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/143763320</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;召回&quot;&gt;&lt;a href=&quot;#召回&quot; class=&quot;headerlink&quot; title=&quot;召回&quot;&gt;&lt;/a&gt;召回&lt;/h1&gt;&lt;p&gt;在推荐系统架构中召回层与排序层是推荐系统的核心算法层，而将推荐过程分成召回层与排序层主要是基于工程上的考虑，其中召回阶段负责将海量的候选集快速缩小为几万到几千的规模；而排序层则负责对缩小后的候选集进行精准排 序。所以在召回阶段往往会利用少量的特征和简单的模型对大规模的数据集进行快速的筛选，而在排序层一般会使用更多的特征和更加复杂的模型进行精准的排序。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="推荐系统" scheme="http://yoursite.com/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="推荐系统 Embedding 召回" scheme="http://yoursite.com/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-Embedding-%E5%8F%AC%E5%9B%9E/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
