@@ -90,7 +90,7 @@
 <meta property="og:description" content="协同过滤协同过滤（Collaborative Filtering）推荐算法是最经典、最常用的推荐算法。所谓协同过滤， 基本思想是根据用户之前的喜好以及其他兴趣相近的用户的选择来给用户推荐物品(基于对用户历史行为数据的挖掘发现用户的喜好偏向， 并预测用户可能喜好的产品进行推荐)，一般是仅仅基于用户的行为数据（评价、购 买、下载等），而不依赖于项的任何附加信息（物品自身特征）或者用户的任何附加信息（年">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="d:/Hexo/themes/next/source/images/十月组队学习_推荐系统_协同算法示例一.jpg">
-<meta property="og:updated_time" content="2020-10-22T13:12:15.069Z">
+<meta property="og:updated_time" content="2020-10-26T09:46:37.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐系统之协同过滤">
 <meta name="twitter:description" content="协同过滤协同过滤（Collaborative Filtering）推荐算法是最经典、最常用的推荐算法。所谓协同过滤， 基本思想是根据用户之前的喜好以及其他兴趣相近的用户的选择来给用户推荐物品(基于对用户历史行为数据的挖掘发现用户的喜好偏向， 并预测用户可能喜好的产品进行推荐)，一般是仅仅基于用户的行为数据（评价、购 买、下载等），而不依赖于项的任何附加信息（物品自身特征）或者用户的任何附加信息（年">
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  3k
                 </span>
               
 
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  10
                 </span>
               
             </div>
@@ -433,6 +433,19 @@
 <h4 id="公式分析"><a href="#公式分析" class="headerlink" title="公式分析"></a>公式分析</h4><p>根据上面的几种方法， 我们可以计算出向量之间的相似程度， 也就是可以计算出Alice和其他用户的相近程度， 这时候我们就可以选出与Alice最相近的前n个用户， 基于他们对物品5的评价猜测出Alice的打分值， 那么是怎么计算的呢？<br>这里常用的方式之一是利用用户相似度和相似用户的评价加权平均获得用户的评价预测， 用下面式子表示：<br>$$<br>R_{\mathrm{u}, \mathrm{p}}=\frac{\sum_{\mathrm{s} \in S}\left(w_{\mathrm{u}, \mathrm{s}} \cdot R_{\mathrm{s}, \mathrm{p}}\right)}{\sum_{\mathrm{s} \in S} w_{\mathrm{u}, \mathrm{s}}}<br>$$</p>
 <p>这个式子里面， 权重Wu,s是用户u和用户s的相似度，Rs,p 是用户s对物品p的评分。</p>
 <p>还有一种方式如下， 这种方式考虑的更加全面， 依然是用户相似度作为权值， 但后面不单纯的是其他用户对物品的评分， 而是该物品的评分与此用户的所有评分的差值进行加权平均，这时候考虑到了有的用户内心的评分标准不一的情况， 即有的用户喜欢打高分， 有的用户喜欢打低分的情况。<br>$$<br>P_{i, j}=\bar{R}<em>{i}+\frac{\sum</em>{k=1}^{n}\left(S_{i, k}\left(R_{k, j}-\bar{R}<em>{k}\right)\right)}{\sum</em>{k=1}^{n} S_{i, k}}<br>$$</p>
+<h3 id="UserCF缺点"><a href="#UserCF缺点" class="headerlink" title="UserCF缺点"></a>UserCF缺点</h3><p>User-based算法存在两个重大问题：<br>1、数据稀疏性:一个大型的电子商务推荐系统一般有非常多的物品，用户可能买的物品只占1%不到，不同用户之间买的物品重叠性较低，导致算法无法找到一个用户的邻居，即偏好相似的用户。导致UserCF不适用于那些正反馈获取较困难的应用场景（如酒店预订，大件商品购买等低频应用）<br>2、算法扩展性:基于用户的协同过滤需要维护用户相似度矩阵以便快速找到Topn相似的用户，该矩阵存储开销非常大，存储空间随着用户数量增加而增加，不适合用户数据量大的情况使用。</p>
+<h3 id="基于物品的协同过滤"><a href="#基于物品的协同过滤" class="headerlink" title="基于物品的协同过滤"></a>基于物品的协同过滤</h3><p>基于物品的协同过滤（ItemCF）的基本思想是预先根据所有用户的历史偏好数据计算物品之间的相似性，然后把与用户喜欢的物品相类似的物品推荐给用户。<br>Item算法并不利用物品的内容属性计算物品之间的相似性，主要通过分析用户的行为记录计算物品之间的相似度。</p>
+<p>基于物品的协同过滤算法主要分为两步：</p>
+<ul>
+<li>计算物品之间的相似度</li>
+<li>根据物品的相似度和用户的历史行为给用户生成推荐列表</li>
+</ul>
+<h3 id="算法评估"><a href="#算法评估" class="headerlink" title="算法评估"></a>算法评估</h3><p>对用户u推荐N个物品记为R(u)， 令用户u在测试集上喜欢的物品集合为T(u)，<br>1、召回率<br>$$<br>\operatorname{Recall}=\frac{\sum_{u}|R(u) \cap T(u)|}{\sum_{u}|T(u)|}<br>$$</p>
+<p>2、准确率<br>$$<br>\operatorname{Precision}=\frac{\sum_{u} \mid R(u) \cap T(u)|}{\sum_{u}|R(u)|}<br>$$</p>
+<p>3、覆盖率<br>$$<br>\text { Coverage }=\frac{\left|\bigcup_{u \in U} R(u)\right|}{|I|}<br>$$</p>
+<h3 id="协同过滤算法的问题分析"><a href="#协同过滤算法的问题分析" class="headerlink" title="协同过滤算法的问题分析"></a>协同过滤算法的问题分析</h3><p>无法将两个物品相似的信息推广到其他物品额度相似性上，导致的问题是热门物品具有很强的头部效应，容易跟大量物品产生相似，而尾部物品由于特征向量稀疏，导致很少被推荐。</p>
+<p>协同过滤导致头部效应明显，处理稀疏向量的能力弱。</p>
+<h3 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h3><p>1、什么时候使用UserCF,什么时候使用ItemCF?为什么？<br>    UserCF由于是基于用户相似度进行推荐，所以具备更强的社交特性。非常适用于用户少，物品多，时效性较强的场合。比如新闻推荐场景，因为新闻本身兴趣点分散，相比用户对不同新闻的兴趣偏好，新闻的及时性，热点性往往更加重要。<br>    ItemCF更适用于兴趣变化较为稳定的应用，更接近于个性化的推荐，适合物品少，用户多，用户兴趣固定持久，物品更新速度不是太快的场合，比如推荐艺术品、音乐、电影。<br>2、协同过滤在计算上有什么缺点？有什么比较好的思路可以解决？<br>    较差的稀疏向量处理能力<br>3、相似度计算方法有什么优劣之处？<br>    cosine相似度比较常用，但是对于评分数据不规范时，存在有的用户喜欢打高分，有的用户喜欢打低分。如果能够按照用户打分喜好的趋势，可以考虑使用皮尔逊相关系数。<br>4、协同过滤还存在其他什么缺陷？有什么比较好的思路可以解决？<br>    协同过滤完全没有利用物品本身或用户本身的属性，无法有效的引入用户特征、物品特征和上下文特征。</p>
 
       
     </div>
@@ -452,7 +465,7 @@
   <p><span>本文标题:</span><a href="/2020/10/21/2020-10-21 推荐系统之协同过滤/">推荐系统之协同过滤</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Six Sister 的个人博客">Six Sister</a></p>
   <p><span>发布时间:</span>2020年10月21日 - 18:10</p>
-  <p><span>最后更新:</span>2020年10月22日 - 21:10</p>
+  <p><span>最后更新:</span>2020年10月26日 - 17:10</p>
   <p><span>原始链接:</span><a href="/2020/10/21/2020-10-21 推荐系统之协同过滤/" title="推荐系统之协同过滤">http://yoursite.com/2020/10/21/2020-10-21 推荐系统之协同过滤/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2020/10/21/2020-10-21 推荐系统之协同过滤/" aria-label="复制成功！"></i></span>
   </p>
@@ -587,7 +600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#协同过滤"><span class="nav-number">1.</span> <span class="nav-text">协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相似性度量方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">相似性度量方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于用户的协同过滤"><span class="nav-number">1.0.2.</span> <span class="nav-text">基于用户的协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公式分析"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">公式分析</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#协同过滤"><span class="nav-number">1.</span> <span class="nav-text">协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相似性度量方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">相似性度量方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于用户的协同过滤"><span class="nav-number">1.0.2.</span> <span class="nav-text">基于用户的协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公式分析"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">公式分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UserCF缺点"><span class="nav-number">1.0.3.</span> <span class="nav-text">UserCF缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于物品的协同过滤"><span class="nav-number">1.0.4.</span> <span class="nav-text">基于物品的协同过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法评估"><span class="nav-number">1.0.5.</span> <span class="nav-text">算法评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协同过滤算法的问题分析"><span class="nav-number">1.0.6.</span> <span class="nav-text">协同过滤算法的问题分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课后思考"><span class="nav-number">1.0.7.</span> <span class="nav-text">课后思考</span></a></li></ol></li></ol></div>
             
 
           </div>
