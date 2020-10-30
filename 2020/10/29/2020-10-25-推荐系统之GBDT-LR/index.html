@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="题目 最长公共前缀 编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 “”。">
+<meta name="description" content="GBDT+LR7.1 GBDT+LR简介前面介绍的协同过滤和矩阵分解存在的劣势就是仅利用了用户与物品相互行为信息进行推荐， 忽视了用户自身特征， 物品自身特征以及上下文信息等，导致生成的结果往往会比较片面。 而这次介绍的这个模型是2014年由Facebook提出的GBDT+LR模型， 该模型利用GBDT自动进行特征筛选和组合， 进而生成新的离散特征向量， 再把该特征向量当做LR模型的输入， 来产生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode【第十四题】最长公共前缀">
-<meta property="og:url" content="http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/index.html">
+<meta property="og:title" content="2020-10-25-推荐系统之GBDT+LR">
+<meta property="og:url" content="http://yoursite.com/2020/10/29/2020-10-25-推荐系统之GBDT-LR/index.html">
 <meta property="og:site_name" content="六姐的博客">
-<meta property="og:description" content="题目 最长公共前缀 编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 “”。">
+<meta property="og:description" content="GBDT+LR7.1 GBDT+LR简介前面介绍的协同过滤和矩阵分解存在的劣势就是仅利用了用户与物品相互行为信息进行推荐， 忽视了用户自身特征， 物品自身特征以及上下文信息等，导致生成的结果往往会比较片面。 而这次介绍的这个模型是2014年由Facebook提出的GBDT+LR模型， 该模型利用GBDT自动进行特征筛选和组合， 进而生成新的离散特征向量， 再把该特征向量当做LR模型的输入， 来产生">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T08:35:23.182Z">
+<meta property="og:updated_time" content="2020-10-30T03:18:11.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode【第十四题】最长公共前缀">
-<meta name="twitter:description" content="题目 最长公共前缀 编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 “”。">
+<meta name="twitter:title" content="2020-10-25-推荐系统之GBDT+LR">
+<meta name="twitter:description" content="GBDT+LR7.1 GBDT+LR简介前面介绍的协同过滤和矩阵分解存在的劣势就是仅利用了用户与物品相互行为信息进行推荐， 忽视了用户自身特征， 物品自身特征以及上下文信息等，导致生成的结果往往会比较片面。 而这次介绍的这个模型是2014年由Facebook提出的GBDT+LR模型， 该模型利用GBDT自动进行特征筛选和组合， 进而生成新的离散特征向量， 再把该特征向量当做LR模型的输入， 来产生">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/">
+  <link rel="canonical" href="http://yoursite.com/2020/10/29/2020-10-25-推荐系统之GBDT-LR/">
 
 
 
 
 
-  <title>Leetcode【第十四题】最长公共前缀 | 六姐的博客</title>
+  <title>2020-10-25-推荐系统之GBDT+LR | 六姐的博客</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/29/2020-10-25-推荐系统之GBDT-LR/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Six Sister">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Leetcode【第十四题】最长公共前缀</h1>
+          <h1 class="post-title" itemprop="name headline">2020-10-25-推荐系统之GBDT+LR</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T18:47:13+08:00">
-                2019-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-29T12:24:14+08:00">
+                2020-10-29
               </time>
             
 
@@ -313,28 +313,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -362,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  181
+                  2.6k
                 </span>
               
 
@@ -378,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -399,29 +377,43 @@
       
 
       
-        <h1 id="题目-最长公共前缀"><a href="#题目-最长公共前缀" class="headerlink" title="题目 最长公共前缀"></a>题目 最长公共前缀</h1><blockquote>
-<p>编写一个函数来查找字符串数组中的最长公共前缀。</p>
-<p>如果不存在公共前缀，返回空字符串 “”。</p>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">输出: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: 输入不存在公共前缀。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>说明：所有输入只包含小写字母a-z</p>
-</blockquote>
-<hr>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote>
-<p>利用python函数特性 set 和 zip </p>
-<blockquote>
-<p>复杂度分析：</p>
-<p>时间复杂度：O(n)</p>
-<p>空间复杂度：O(n)</p>
-</blockquote>
-</blockquote>
-<hr>
-<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码 1"></a>代码 1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestCommonPrefix(self, strs):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type strs: List[str]</span><br><span class="line">        :rtype: str</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        res = &quot;&quot;</span><br><span class="line">        for tmp in zip(*strs):</span><br><span class="line">            tmp_set = set(tmp)</span><br><span class="line">            if len(tmp_set) == 1:</span><br><span class="line">                res += tmp[0]</span><br><span class="line">            else:</span><br><span class="line">                break</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
-
+        <h1 id="GBDT-LR"><a href="#GBDT-LR" class="headerlink" title="GBDT+LR"></a>GBDT+LR</h1><h2 id="7-1-GBDT-LR简介"><a href="#7-1-GBDT-LR简介" class="headerlink" title="7.1 GBDT+LR简介"></a>7.1 GBDT+LR简介</h2><p>前面介绍的协同过滤和矩阵分解存在的劣势就是仅利用了用户与物品相互行为信息进行推荐， 忽视了用户自身特征， 物品自身特征以及上下文信息等，导致生成的结果往往会比较片面。 而这次介绍的这个模型是2014年由Facebook提出的GBDT+LR模型， 该模型利用GBDT自动进行特征筛选和组合， 进而生成新的离散特征向量， 再把该特征向量当做LR模型的输入， 来产生最后的预测结果， 该模型能够综合利用用户、物品和上下文等多种不同的特征， 生成较为全面的推荐结果， 在CTR点击率预估场景下使用较为广泛。</p>
+<h3 id="逻辑回归模型"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型</h3><p>逻辑回归模型非常重要， 在推荐领域里面， 相比于传统的协同过滤， 逻辑回归模型能够综合利用用户、物品、上下文等多种不同的特征生成较为“全面”的推荐结果， 关于逻辑回归的更多细节， 可以参考下面给出的链接，这里只介绍比较重要的一些细节和在推荐中的应用。</p>
+<p>逻辑回归是在线性回归的基础上加了一个 Sigmoid 函数（非线形）映射，使得逻辑回归成为了一个优秀的分类算法， 学习逻辑回归模型， 首先应该记住一句话：<strong>逻辑回归假设数据服从伯努利分布,通过极大化似然函数的方法，运用梯度下降来 求解参数，来达到将数据二分类的目的。</strong></p>
+<p>相比于协同过滤和矩阵分解利用用户的物品“相似度”进行推荐， 逻辑回归模型将问题看成了一个分类问题， 通过预测正样本的概率对物品进行排序。这里的正样本可以是用户“点击”了某个商品或者“观看”了某个视频， 均是推荐系统希望用户产生的“正反馈”行为， 因此逻辑回归模型将推荐问题转化成了一个点击率预估问题。而点击率预测就是一个典型的二分类， 正好适合逻辑回归进行处理， 那么逻辑回归是如何做推荐的呢？ 过程如下：</p>
+<ol>
+<li>将用户年龄、性别、物品属性、物品描述、当前时间、当前地点等特征转成数值型向量</li>
+<li>确定逻辑回归的优化目标，比如把点击率预测转换成二分类问题， 这样就可以得到分类问题常用的损失作为目标，训练模型</li>
+<li>在预测的时候， 将特征向量输入模型产生预测， 得到用户“点击”物品的概率</li>
+<li>利用点击概率对候选物品排序， 得到推荐列表</li>
+</ol>
+<h3 id="逻辑回归模型的优缺点"><a href="#逻辑回归模型的优缺点" class="headerlink" title="逻辑回归模型的优缺点"></a>逻辑回归模型的优缺点</h3><p>优点</p>
+<ol>
+<li>LR模型形式简单，可解释性好，从特征的权重可以看到不同的特征对最后结果的影响。</li>
+<li>训练时便于并行化，在预测时只需要对特征进行线性加权，所以性能比较好，往往适合处理海量id类特征，用id类特征有一个很重要的好处，就是防止信息损失（相对于范化的 CTR 特征），对于头部资源会有更细致的描述。</li>
+<li>资源占用小,尤其是内存。在实际的工程应用中只需要存储权重比较大的特征及特征对应的权重。</li>
+<li>方便输出结果调整。逻辑回归可以很方便的得到最后的分类结果，因为输出的是每个样本的概率分数，我们可以很容易的对这些概率分数进行cutoff，也就是划分阈值(大于某个阈值的是一类，小于某个阈值的是一类)。</li>
+</ol>
+<p>缺点</p>
+<ol>
+<li>表达能力不强， 无法进行特征交叉， 特征筛选等一系列“高级“操作（这些工作都得人工来干， 这样就需要一定的经验， 否则会走一些弯路）， 因此可能造成信息的损失。</li>
+<li>准确率并不是很高。因为这毕竟是一个线性模型加了个sigmoid， 形式非常的简单(非常类似线性模型)，很难去拟合数据的真实分布。</li>
+<li>处理非线性数据较麻烦。逻辑回归在不引入其他方法的情况下，只能处理线性可分的数据， 如果想处理非线性， 首先对连续特征的处理需要先进行离散化（离散化的目的是为了引入非线性），如上文所说，人工分桶的方式会引入多种问题。</li>
+<li>LR 需要进行人工特征组合，这就需要开发者有非常丰富的领域经验，才能不走弯路。这样的模型迁移起来比较困难，换一个领域又需要重新进行大量的特征工程。</li>
+</ol>
+<p><strong>所以如何自动发现有效的特征、特征组合，弥补人工经验不足，缩短LR特征实验周期，是亟需解决的问题，而GBDT模型，正好可以自动发现特征并进行有效组合</strong></p>
+<h3 id="GBDT模型"><a href="#GBDT模型" class="headerlink" title="GBDT模型"></a>GBDT模型</h3><p>GBDT全称梯度提升决策树，在传统机器学习算法里面是对真实分布拟合的最好的几种算法之一，在前几年深度学习还没有大行其道之前，gbdt在各种竞赛是大放异彩。原因大概有几个，一是效果确实挺不错。二是即可以用于分类也可以用于回归。三是可以筛选特征， 所以这个模型依然是一个非常重要的模型。</p>
+<p>GBDT是通过采用加法模型(即基函数的线性组合），以及不断减小训练过程产生的误差来达到将数据分类或者回归的算法。</p>
+<p>GBDT通过多轮迭代，每轮迭代会产生一个弱分类器，每个分类器在上一轮分类器的残差基础上进行训练。GBDT对弱分类器的要求一般是足够简单，并且低方差高偏差。因为训练的过程是通过降低偏差来不断提高最终分类器的精度。由于上述高偏差和简单的要求，每个分类回归树的深度不会很深。最终的总分类器是将每轮训练得到的弱分类器加权求和得到的（也就是加法模型）。</p>
+<p>关于GBDT的详细细节，依然是可以参考下面给出的链接。这里想分析一下GBDT如何来进行二分类的，因为我们要明确一点就是GBDT每轮的训练是在上一轮的训练的残差基础之上进行训练的， 而这里的残差指的就是当前模型的负梯度值，这个就要求每轮迭代的时候，弱分类器的输出的结果相减是有意义的， 而GBDT无论用于分类还是回归一直都是使用的CART回归树， 那么既然是回归树， 是如何进行二分类问题的呢？</p>
+<p>GBDT 来解决二分类问题和解决回归问题的本质是一样的，都是通过不断构建决策树的方式，使预测结果一步步的接近目标值， 但是二分类问题和回归问题的损失函数是不同的， 关于GBDT在回归问题上的树的生成过程， 损失函数和迭代原理可以参考给出的链接， 回归问题中一般使用的是平方损失， 而二分类问题中， GBDT和逻辑回归一样</p>
+<p>这样， 我们就得到了某个训练样本在当前模型的梯度值了， 那么残差就是yi-pi 。GBDT二分类的这个思想，其实和逻辑回归的思想一样。</p>
+<h3 id="构建分类GBDT"><a href="#构建分类GBDT" class="headerlink" title="构建分类GBDT"></a>构建分类GBDT</h3><ol>
+<li>初始化GBDT：<br>和回归问题一样， 分类 GBDT 的初始状态也只有一个叶子节点，该节点为所有样本的初始预测值，如下<br>$$<br>F_{0}(x)=\arg \min <em>{r} \sum</em>{i=1}^{n} L(y, r)<br>$$<br>上式里面，F 代表GBDT模型， F0是模型的初识状态， 该式子的意思是找到一个伽马 ，使所有样本的 Loss 最小，在这里及下文中， 伽马都表示节点的输出，即叶子节点， 且它是一个log(伽马)形式的值(回归值)，在初始状态伽马=F0。</li>
+<li>循环生成决策树<br>这里回忆一下回归树的生成步骤， 其实有4小步， 第一就是计算负梯度值得到残差， 第二步是用回归树拟合残差，第三步是计算叶子节点的输出值， 第四步是更新模型。</li>
+</ol>
+<h3 id="GBDT的优缺点"><a href="#GBDT的优缺点" class="headerlink" title="GBDT的优缺点"></a>GBDT的优缺点</h3><p>我们可以把树的生成过程理解成自动进行多维度的特征组合的过程，从根结点到叶子节点上的整个路径(多个特征值判断)，才能最终决定一棵树的预测值， 另外，对于连续型特征的处理，GBDT 可以拆分出一个临界阈值，比如大于 0.027 走左子树，小于等于 0.027（或者 default 值）走右子树，这样很好的规避了人工离散化的问题。这样就非常轻松的解决了逻辑回归那里自动发现特征并进行有效组合的问题， 这也是GBDT的优势所在。<br>但是GBDT也会有一些局限性， 对于海量的id类特征，GBDT 由于树的深度和棵树限制（防止过拟合），不能有效的存储；另外海量特征在也会存在性能瓶颈，当 GBDT 的 one hot 特征大于 10 万维时，就必须做分布式的训练才能保证不爆内存。所以 GBDT 通常配合少量的反馈 CTR 特征来表达，这样虽然具有一定的范化能力，但是同时会有信息损失，对于头部资源不能有效的表达。</p>
+<h3 id="GBDT-LR模型"><a href="#GBDT-LR模型" class="headerlink" title="GBDT+LR模型"></a>GBDT+LR模型</h3>
       
     </div>
     
@@ -437,12 +429,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/10/24/Leetcode【第十四题】最长公共前缀/">Leetcode【第十四题】最长公共前缀</a></p>
+  <p><span>本文标题:</span><a href="/2020/10/29/2020-10-25-推荐系统之GBDT-LR/">2020-10-25-推荐系统之GBDT+LR</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Six Sister 的个人博客">Six Sister</a></p>
-  <p><span>发布时间:</span>2019年10月24日 - 18:10</p>
-  <p><span>最后更新:</span>2019年10月28日 - 16:10</p>
-  <p><span>原始链接:</span><a href="/2019/10/24/Leetcode【第十四题】最长公共前缀/" title="Leetcode【第十四题】最长公共前缀">http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/10/24/Leetcode【第十四题】最长公共前缀/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年10月29日 - 12:10</p>
+  <p><span>最后更新:</span>2020年10月30日 - 11:10</p>
+  <p><span>原始链接:</span><a href="/2020/10/29/2020-10-25-推荐系统之GBDT-LR/" title="2020-10-25-推荐系统之GBDT+LR">http://yoursite.com/2020/10/29/2020-10-25-推荐系统之GBDT-LR/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2020/10/29/2020-10-25-推荐系统之GBDT-LR/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -480,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/24/Leetcode【第十三题】罗马数字转整数/" rel="next" title="Leetcode【第十三题】罗马数字转整数">
-                <i class="fa fa-chevron-left"></i> Leetcode【第十三题】罗马数字转整数
+              <a href="/2020/10/27/2020-10-27-推荐系统之Wide-Deep/" rel="next" title="2020-10-27 推荐系统之Wide&Deep">
+                <i class="fa fa-chevron-left"></i> 2020-10-27 推荐系统之Wide&Deep
               </a>
             
           </div>
@@ -490,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/28/Leetcode【第十五题】三数之和/" rel="prev" title="Leetcode【第十五题】三数之和">
-                Leetcode【第十五题】三数之和 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/10/30/2020-10-30-Numpy之排序搜索计数及集合操作/" rel="prev" title="2020-10-30-Numpy之排序搜索计数及集合操作">
+                2020-10-30-Numpy之排序搜索计数及集合操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -641,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目-最长公共前缀"><span class="nav-number">1.</span> <span class="nav-text">题目 最长公共前缀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例1"><span class="nav-number">1.1.</span> <span class="nav-text">示例1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例2"><span class="nav-number">1.2.</span> <span class="nav-text">示例2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.2.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">代码 1</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GBDT-LR"><span class="nav-number">1.</span> <span class="nav-text">GBDT+LR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-GBDT-LR简介"><span class="nav-number">1.1.</span> <span class="nav-text">7.1 GBDT+LR简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归模型"><span class="nav-number">1.1.1.</span> <span class="nav-text">逻辑回归模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归模型的优缺点"><span class="nav-number">1.1.2.</span> <span class="nav-text">逻辑回归模型的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT模型"><span class="nav-number">1.1.3.</span> <span class="nav-text">GBDT模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建分类GBDT"><span class="nav-number">1.1.4.</span> <span class="nav-text">构建分类GBDT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT的优缺点"><span class="nav-number">1.1.5.</span> <span class="nav-text">GBDT的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GBDT-LR模型"><span class="nav-number">1.1.6.</span> <span class="nav-text">GBDT+LR模型</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
